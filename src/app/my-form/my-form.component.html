@@ -1,0 +1,26 @@
+<div style="border: 1px solid grey; width: 70%; margin: auto; background-color: white; position:relative;
+bottom:-50px;">
+    <form [formGroup]="form">
+        <div class="form-group" style="margin: 20px;">
+            <h6>Name <span style="color: red;" *ngIf="form.get('name').errors?.required">*</span></h6>
+            <input formControlName="name" placeholder="Your answer" style="border: none ; border-bottom: 1px solid gray;">
+        </div>
+        <div class="form-group"  style="margin: 20px;">
+            <h6>Email <span style="color: red;" *ngIf="form.get('email').errors?.required">*</span></h6> 
+            <input formControlName="email" placeholder="Your answer" style="border: none ; border-bottom: 1px solid gray;">
+            <small style="color: red;" *ngIf="form.get('email').errors?.email">Wrong email format</small>
+        </div>
+        <div class="form-group"  style="margin: 20px;">
+            <h6>Postal Address <span style="color: red;" *ngIf="form.get('address').errors?.required">*</span></h6> 
+            <input formControlName="address" placeholder="Your answer" style="border: none ; border-bottom: 1px solid gray;">
+        </div>
+        <div class="form-group"  style="margin: 20px;">
+            <h6>Comments</h6>         
+            <input formControlName="comments" placeholder="Your answer" style="border: none ; border-bottom: 1px solid gray;">
+        </div>
+        <div class="form-group"  style="margin: 20px;">
+            <button class="btn btn-primary" [disabled]="form.invalid" (click)="submitForm()">Submit</button>
+        </div>
+    </form>
+
+</div>
